@@ -1,4 +1,5 @@
-int count = 20;
+int count = 1500;
+Bucket b= new Bucket(100);
 Raindrop[] r= new Raindrop[count];
 
 PVector mouse;   //declare a P
@@ -40,6 +41,7 @@ while(i<count){
   }
   i++;
 }
+b.display();
 }
 
 
@@ -76,7 +78,7 @@ class Raindrop {
   }
   boolean contact(PVector bucket) { 
     loc.dist(mouse);
-    if (loc.dist(mouse)<diam/2) {
+    if (loc.dist(mouse)<diam+b.diam/2) {
       return true;
     } else {
       return false;
